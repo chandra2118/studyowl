@@ -1,0 +1,86 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href="login.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    <title>profile</title>
+
+</head>
+
+
+<body>
+
+
+
+<form class="register-form" method="post" action="/logout" >
+
+    <button type="submit" class="btn btn-success" style="margin-left:1250px ;margin-top:25px ;">logout</button>
+</form>
+
+
+<h1></h1>
+<table class="table">
+    <tbody>
+    <tr>
+        <td><strong> User name </strong></td>
+        <td><strong> Email </strong></td>
+        <td><strong> contact </strong></td>
+        
+
+
+
+        <br>
+        <br>
+        <% for(var i=0; i<data.length; i++) {%>
+    <tr>
+        <td> <%= data[i].name %> </td>
+        <td> <%= data[i].email %> </td>
+        <td> <%= data[i].phone %> </td>
+        
+        
+    </tr>
+    <% } %>
+    <tr>
+
+    </tbody>
+
+</table>
+
+<form class="register-form" method="get" action="http://localhost:5000/studyowl-chandra/us-central1/app/addproject/<%= data[0].uid %>" >
+    <button type="submit" class="btn btn-success" style="margin-left:625px ;margin-top:25px ;">ADD PROJECT</button>
+</form>
+
+<!--<table class="table">-->
+<!--<tbody>-->
+
+
+
+
+<!--<tr>-->
+
+<!--</tbody>-->
+
+<!--</table>-->
+
+
+
+<script>
+
+
+
+</script>
+</body>
+
+</html>

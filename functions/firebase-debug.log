@@ -1,0 +1,119 @@
+[debug] [2018-05-15T11:24:40.694Z] ----------------------------------------------------------------------
+[debug] [2018-05-15T11:24:40.702Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-05-15T11:24:40.703Z] CLI Version:   3.18.4
+[debug] [2018-05-15T11:24:40.703Z] Platform:      win32
+[debug] [2018-05-15T11:24:40.703Z] Node Version:  v8.11.1
+[debug] [2018-05-15T11:24:40.705Z] Time:          Tue May 15 2018 16:54:40 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:24:40.705Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-15T11:24:40.746Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-15T11:24:40.747Z] > authorizing via signed-in user
+[debug] [2018-05-15T11:24:40.754Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/studyowl-chandra  
+  
+ Tue May 15 2018 16:54:40 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:24:42.425Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-15T11:24:42.427Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/studyowl-chandra/tokens  
+  
+ Tue May 15 2018 16:54:42 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:24:43.351Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-15T11:24:43.353Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/studyowl-chandra  
+  
+ Tue May 15 2018 16:54:43 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:24:44.962Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'c:\Users\user\chandra2118'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-05-15T11:24:47.335Z] Fetching environment
+[debug] [2018-05-15T11:24:47.342Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/566073925540:getServerAppConfig  
+  
+ Tue May 15 2018 16:54:47 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:24:48.229Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-15T11:24:48.230Z] Starting @google-cloud/functions-emulator
+[debug] [2018-05-15T11:24:53.390Z] Parsing function triggers
+[info] +  functions: app: http://localhost:5000/studyowl-chandra/us-central1/app
+[debug] [2018-05-15T11:42:13.054Z] ----------------------------------------------------------------------
+[debug] [2018-05-15T11:42:13.062Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-05-15T11:42:13.063Z] CLI Version:   3.18.4
+[debug] [2018-05-15T11:42:13.063Z] Platform:      win32
+[debug] [2018-05-15T11:42:13.063Z] Node Version:  v8.11.1
+[debug] [2018-05-15T11:42:13.065Z] Time:          Tue May 15 2018 17:12:13 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:42:13.065Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-15T11:42:13.099Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-15T11:42:13.100Z] > authorizing via signed-in user
+[debug] [2018-05-15T11:42:13.107Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-05-15T11:42:13.108Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/1AW-rRReQKrgOxxzXlKmY_-aF58ORSOG7EH49Da03qU',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue May 15 2018 17:12:13 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:42:13.582Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-15T11:42:13.658Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/studyowl-chandra  
+  
+ Tue May 15 2018 17:12:13 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:42:15.243Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-15T11:42:15.244Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/studyowl-chandra/tokens  
+  
+ Tue May 15 2018 17:12:15 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:42:16.468Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-15T11:42:16.470Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/studyowl-chandra  
+  
+ Tue May 15 2018 17:12:16 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:42:18.025Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'c:\Users\user\chandra2118'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-05-15T11:42:20.366Z] Fetching environment
+[debug] [2018-05-15T11:42:20.371Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/566073925540:getServerAppConfig  
+  
+ Tue May 15 2018 17:12:20 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T11:42:21.226Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-15T11:42:21.228Z] Starting @google-cloud/functions-emulator
+[debug] [2018-05-15T11:42:26.388Z] Parsing function triggers
+[info] +  functions: app: http://localhost:5000/studyowl-chandra/us-central1/app
+[debug] [2018-05-16T15:08:30.414Z] ----------------------------------------------------------------------
+[debug] [2018-05-16T15:08:30.422Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-05-16T15:08:30.423Z] CLI Version:   3.18.4
+[debug] [2018-05-16T15:08:30.423Z] Platform:      win32
+[debug] [2018-05-16T15:08:30.423Z] Node Version:  v8.11.1
+[debug] [2018-05-16T15:08:30.424Z] Time:          Wed May 16 2018 20:38:30 GMT+0530 (India Standard Time)
+[debug] [2018-05-16T15:08:30.424Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-16T15:08:30.487Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-16T15:08:30.487Z] > authorizing via signed-in user
+[debug] [2018-05-16T15:08:30.494Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-05-16T15:08:30.494Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/1AW-rRReQKrgOxxzXlKmY_-aF58ORSOG7EH49Da03qU',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed May 16 2018 20:38:30 GMT+0530 (India Standard Time)
+[debug] [2018-05-16T15:08:31.257Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-16T15:08:31.329Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/studyowl-chandra  
+  
+ Wed May 16 2018 20:38:31 GMT+0530 (India Standard Time)
+[debug] [2018-05-16T15:08:32.835Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-16T15:08:32.836Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/studyowl-chandra/tokens  
+  
+ Wed May 16 2018 20:38:32 GMT+0530 (India Standard Time)
+[debug] [2018-05-16T15:08:34.044Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-16T15:08:34.047Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/studyowl-chandra  
+  
+ Wed May 16 2018 20:38:34 GMT+0530 (India Standard Time)
+[debug] [2018-05-16T15:08:36.072Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'c:\Users\user\project'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-05-16T15:08:39.346Z] Fetching environment
+[debug] [2018-05-16T15:08:39.353Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/566073925540:getServerAppConfig  
+  
+ Wed May 16 2018 20:38:39 GMT+0530 (India Standard Time)
+[debug] [2018-05-16T15:08:40.874Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-16T15:08:40.875Z] Starting @google-cloud/functions-emulator
+[debug] [2018-05-16T15:08:49.598Z] Parsing function triggers

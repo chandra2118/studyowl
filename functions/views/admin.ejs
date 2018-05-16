@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>admin page</title>
+</head>
+<body> 
+	<div class="nav-wrapper">
+	<a>review projects</a>
+	<ul class="right hide-on-med-and-down">
+			
+		<!-- Dropdown Trigger -->
+
+	</ul>
+</div>
+<h1>Projects: <br></h1>
+<ul><% for(var i=0;i<res.length;i++){ %>
+    <li><%=JSON.stringify(res[i].pname)%></li><a href="/viewp/<%=res[i].pid%>"><button>view this project</button></a> <a href="/acceptp/<%=res[i].pid%>"><button>accept</button></a><a href="/rejectp/<%=res[i].pid%>"><button>reject</button></a>
+
+    <% } %>
+  
+
+
+
+</body>
+</html>

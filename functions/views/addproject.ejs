@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADD PROJECT</title>
+	<link href="login.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+</head>
+<body>
+	<div class="login-page">
+		<div class="form">
+
+    <h1> ADD PROJECT DETAILS</h1>
+			<form class="register-form" method="post" action="http://localhost:5000/studyowl-chandra/us-central1/app/createproj/<%= data[0].uid %>">
+				<br><input type="text" placeholder="project name" name="name"/></br>
+
+				 <br><input type="integer" placeholder="property1" name="feild1"/></br>
+				  <br><input type="text" placeholder="property2" name="feild2"/></br>
+                <br></br>
+
+      <button type="submit">create</button>
+				</form>
+			
+	</div>
+
+	
+</body>
+</html>

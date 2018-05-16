@@ -1,0 +1,34 @@
+[debug] [2018-05-15T06:19:11.600Z] ----------------------------------------------------------------------
+[debug] [2018-05-15T06:19:11.611Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-05-15T06:19:11.612Z] CLI Version:   3.18.4
+[debug] [2018-05-15T06:19:11.612Z] Platform:      win32
+[debug] [2018-05-15T06:19:11.612Z] Node Version:  v8.11.1
+[debug] [2018-05-15T06:19:11.614Z] Time:          Tue May 15 2018 11:49:11 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T06:19:11.614Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-15T06:19:11.658Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-15T06:19:11.659Z] > authorizing via signed-in user
+[debug] [2018-05-15T06:19:11.669Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/studyowl-chandra  
+  
+ Tue May 15 2018 11:49:11 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T06:19:13.437Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-15T06:19:13.440Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/studyowl-chandra/tokens  
+  
+ Tue May 15 2018 11:49:13 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T06:19:14.416Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-15T06:19:14.419Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/studyowl-chandra  
+  
+ Tue May 15 2018 11:49:14 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T06:19:15.935Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\user\chandra2118'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-05-15T06:19:19.254Z] Fetching environment
+[debug] [2018-05-15T06:19:19.261Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/566073925540:getServerAppConfig  
+  
+ Tue May 15 2018 11:49:19 GMT+0530 (India Standard Time)
+[debug] [2018-05-15T06:19:20.208Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-15T06:19:20.209Z] Starting @google-cloud/functions-emulator
+[debug] [2018-05-15T06:19:27.372Z] Parsing function triggers
+[info] +  functions: app: http://localhost:5000/studyowl-chandra/us-central1/app
