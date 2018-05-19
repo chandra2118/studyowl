@@ -1,6 +1,4 @@
 const admin = require("firebase-admin");
-
-
 var functions = require("firebase-functions");
 var firebase = require('firebase');
 var bodyParser = require('body-parser');
@@ -127,6 +125,7 @@ app.get('/profile/:a', function (req, res) {
 	var userName = req.params.b;
 	var o = [];
 	var p = [];
+	console.log(globaluid)
 	console.log(userid)
 	console.log(userName)
 	var getuserRef = db.collection('user').where('uid', '==', userid).limit(1).get()
@@ -140,20 +139,28 @@ app.get('/profile/:a', function (req, res) {
 					o.push(doc.data());
 				});
 
-				var userCheck = db.collection('users').doc(globaluid).collection('userProj').get()
+				var userCheck = db.collection('user').doc(userid).collection('userproj').get()
 					.then(snapshot => {
-						snapshot.forEach(doc => {
-							p.push(doc.data());
-						})
-						res.render("profile.ejs", { data: o, res1: p })
+						if (snapshot.empty) {
+							console.log("no approved projects")
+							res.render("profile1.ejs", { data: o })
+						}
+						else {
+
+							snapshot.forEach(doc => {
+								p.push(doc.data());
+							})
+							console.log(p)
+							res.render("profile.ejs", { data: o, res: p })
+						}
 					})
 					.catch(err => {
 						console.log(err);
 						res.redirect('http://localhost:5000/studyowl-chandra/us-central1/app/dashboard')  // error in get()
 					})
 
-			}
-
+			
+				}
 		})
 		.catch(err => {
 			console.log(err);
@@ -162,7 +169,8 @@ app.get('/profile/:a', function (req, res) {
 })
 app.get('/addproject/:var', function (req, res) {
 	var userid = req.params.var;
-	var o =[];
+	console.log(globaluid)
+	var o = [];
 	var getuserRef = db.collection('user').where('uid', '==', userid).limit(1).get()
 		.then(function (querySnapshot) {
 			if (querySnapshot.empty) {
@@ -172,26 +180,27 @@ app.get('/addproject/:var', function (req, res) {
 			else {
 				querySnapshot.forEach(function (doc) {
 					o.push(doc.data());
-					res.render('addproject',{data:o})
+					res.render('addproject', { data: o })
 				});
 			}
-		}).catch (err => {
-		console.log(err);
-		res.redirect('http://localhost:5000/studyowl-chandra/us-central1/app/signin')  // error in get()
-	})
+		}).catch(err => {
+			console.log(err);
+			res.redirect('http://localhost:5000/studyowl-chandra/us-central1/app/signin')  // error in get()
+		})
 });
 app.post('/createproj/:var', function (req, res) {
 	var n = req.body.name,
 		p = req.body.feild1,
 		c = req.body.feild2,
 		d = req.params.var
-		var o =[];
+	var o = [];
+	var p = []
 	console.log(d)
-
+	console.log(globaluid)
 	var obj = {
 		name: n,
 		feilds: [p, c],
-	
+
 	}
 	console.log(globaluid);
 	userRef = db.collection('revproj').doc(); //assigns a unique id into userRef
@@ -201,12 +210,12 @@ app.post('/createproj/:var', function (req, res) {
 		pname: n,
 		fields: [p, c],
 		uid: d,
-		permission : ["true","false","false"]
+		permission: ["true", "false", "false"]
 	}
 
 	var insertRef = userRef.set(obj);
 
-	var getuserRef = db.collection('user').where('uid', '==',d).limit(1).get()
+	var getuserRef = db.collection('user').where('uid', '==', d).limit(1).get()
 		.then(function (querySnapshot) {
 			if (querySnapshot.empty) {
 				console.log("user does not exist");
@@ -215,52 +224,124 @@ app.post('/createproj/:var', function (req, res) {
 			else {
 				querySnapshot.forEach(function (doc) {
 					o.push(doc.data());
-					
+
 				});
-				res.render('profile',{data:o})
+				var userCheck = db.collection('user').doc(d).collection('userproj').get()
+					.then(snapshot => {
+						snapshot.forEach(doc => {
+							p.push(doc.data());
+						})
+						console.log(p)
+						res.render("profile.ejs", { data: o, res: p })
+					})
+					.catch(err => {
+						console.log(err);
+						console.log("not inserted")
+						res.redirect('http://localhost:5000/studyowl-chandra/us-central1/app/dashboard')  // error in get()
+					})
+
 			}
-		}).catch (err => {
-		console.log(err);
-		res.redirect('http://localhost:5000/studyowl-chandra/us-central1/app/signin')  // error in get()
-	})
-})
-app.get('/admin',function(req,res){
-	obj =[];
-	revproj = db.collection('revproj').get()
-	.then(snapshot => {
-		snapshot.forEach(doc => {
-			obj.push(doc.data());
-			
+		}).catch(err => {
+			console.log(err);
+			res.redirect('http://localhost:5000/studyowl-chandra/us-central1/app/signin')  // error in get()
 		})
-        console.log(obj)
-			res.render('admin',{res:obj})
-	})
-	.catch(err => {
-		console.log(err)
-		res.render('signin');
-	});
+})
+app.get('/admin', function (req, res) {
+	obj = [];
+	p = ['true', 'false', 'false'];
+	revproj = db.collection('revproj').where('permission', '==', p).get()
+		.then(snapshot => {
+			snapshot.forEach(doc => {
+				obj.push(doc.data());
+
+			})
+			console.log(obj)
+			res.render('admin', { res: obj })
+		})
+		.catch(err => {
+			console.log(err)
+			res.render('signin');
+		});
 })
 
-app.get('/acceptp/:var',function(req,res){
-var a = req.params.var;
-var o =[];
+app.get('/acceptp/:var1/:var2', function (req, res) {
+	var a = req.params.var1;
+	var b = req.params.var2;
+	var o = [];
+	console.log(globaluid)
 
-var getuserRef = db.collection('revproj').where('pid', '==',a).limit(1).get()
-		.then(function (querySnapshot) {
-			if (querySnapshot.empty) {
-				console.log("project does not exist");
+	var getuserRef = db.collection('revproj').doc(a);
+	getuserRef.get()
+		.then(function (doc) {
+			if (doc.exists) {
+				console.log("Document data:", doc.data());
+
+				var obj = {
+					pid: doc.data().pid,
+					pname: doc.data().pname,
+					fields: doc.data().fields,
+					uid: doc.data().uid,
+					permission: ["false", "true", "false"]
+				}
+				console.log(obj)
+				getuserRef.set(obj);
+				var setproj = db.collection('project').doc(a).set(obj);
+				var seruserproj = db.collection('user').doc(b).collection('userproj').doc(a).set(obj);
+
 				res.redirect('http://localhost:5000/studyowl-chandra/us-central1/app/admin')
 			}
 			else {
-				querySnapshot.forEach(function (doc) {
-					o.push(doc.data());
-					
-				});
-				console.log(o.uid)
+				console.log("No such document!");
+				res.render('index')
 			}
-		}).catch (err => {
-		console.log(err);
-		res.redirect('http://localhost:5000/studyowl-chandra/us-central1/app/admin')  // error in get()
-	})
+		}).catch(function (error) {
+			console.log("Error getting document:", error);
+			res.render('index')
+
+		});
+
+
 })
+app.get('/rp/:var1/:var2', function (req, res) {
+	var a = req.params.var1;
+	var b = req.params.var2;
+	var o = [];
+
+
+	var getuserRef = db.collection('revproj').doc(a);
+	getuserRef.get()
+		.then(function (doc) {
+			if (doc.exists) {
+				console.log("Document data:", doc.data());
+
+				var obj = {
+					pid: doc.data().pid,
+					pname: doc.data().pname,
+					fields: doc.data().fields,
+					uid: doc.data().uid,
+					permission: ["false", "false", "true"]
+				}
+				console.log(obj)
+				getuserRef.set(obj);
+				var setproj = db.collection('project').doc(a).set(obj);
+				var seruserproj = db.collection('user').doc(b).collection('userproj').doc(a).set(obj);
+				db.collection("project").doc(a).delete().then(function () {
+					console.log("Document successfully deleted!");
+					res.redirect('http://localhost:5000/studyowl-chandra/us-central1/app/admin')
+				}).catch(function (error) {
+					console.error("Error removing document: ", error);
+				});
+
+			}
+			else {
+				console.log("No such document!");
+				res.render('index')
+			}
+		}).catch(function (error) {
+			console.log("Error getting document:", error);
+			res.render('index')
+
+		});
+})
+
 exports.app = functions.https.onRequest(app);
