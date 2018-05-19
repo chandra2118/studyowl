@@ -15,7 +15,9 @@
 </div>
 <h1>Projects: <br></h1>
 <ul><% for(var i=0;i<res.length;i++){ %>
-<li><%=JSON.stringify(res[i].pname)%><% for(var j=0;j<res[i].feilds.length;j++){%><%=JSON.stringify(res[i].feilds[j])%> <%}%>
+<li><%=JSON.stringify(res[i].pname)%> %><% for(var j=0;j<res[i].fields.length;j++){ %>
+	<%=JSON.stringify(res[i].fields[j])%> %><% } %>
+	
 </li> <a href="/viewp/<%=res[i].pid%>/"><button>view this project</button></a>
 <% } %>
 </ul>

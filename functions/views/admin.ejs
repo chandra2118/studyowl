@@ -14,7 +14,7 @@
 </div>
 <h1>Projects: <br></h1>
 <ul><% for(var i=0;i<res.length;i++){ %>
-    <li><%=JSON.stringify(res[i].pname)%></li><a href="/viewp/<%=res[i].pid%>"><button>view this project</button></a> <a href="/acceptp/<%=res[i].pid%>"><button>accept</button></a><a href="/rejectp/<%=res[i].pid%>"><button>reject</button></a>
+    <li><%=JSON.stringify(res[i].pname)%> </li><a href="http://localhost:5000/studyowl-chandra/us-central1/app/viewp/<%=res[i].pid%>/"><button>view this project</button></a> <a href="http://localhost:5000/studyowl-chandra/us-central1/app/acceptp/<%=res[i].pid%>/<%= res[i].uid %>"><button>accept</button></a><a href="http://localhost:5000/studyowl-chandra/us-central1/app/rp/<%=res[i].pid%>/<%= res[i].uid %>"><button>reject</button></a>
 
     <% } %>
   
